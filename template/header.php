@@ -87,9 +87,9 @@
 			version    : 'v2.0' // use version 2.0
 		  });
 
-		  FB.getLoginStatus(function(response) {
-			statusChangeCallback(response);
-		  });
+		 // FB.getLoginStatus(function(response) {
+			//statusChangeCallback(response);
+		  //});
 
 		  };
 
