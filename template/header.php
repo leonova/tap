@@ -52,45 +52,15 @@
 	<body>
 	<script src="http://connect.facebook.net/en_US/all.js"></script>	
 		<script>
-		  // This is called with the results from from FB.getLoginStatus().
-		  function statusChangeCallback(response) {
-			
-			if (response.status === 'connected') {
-			  // Logged into your app and Facebook.				
-			 setUser();
-			} else if (response.status === 'not_authorized') {
-			  // The person is logged into Facebook, but not your app.
-			  
-			} else {
-			fb_login();
-			
-			  // The person is not logged into Facebook, so we're not sure if
-			  // they are logged into this app or not.			  
-			}
-		  }
-
-		  // This function is called when someone finishes with the Login
-		  // Button.  See the onlogin handler attached to it in the sample
-		  // code below.
-		  function checkLoginState() {
-			FB.getLoginStatus(function(response) {
-			  statusChangeCallback(response);
-			});
-		  }
-
+				
 		  window.fbAsyncInit = function() {
-		  FB.init({
-			appId      : '267478916752443',
-			cookie     : true,  // enable cookies to allow the server to access 
-								// the session
-			xfbml      : true,  // parse social plugins on this page
-			version    : 'v2.0' // use version 2.0
-		  });
-
-		 // FB.getLoginStatus(function(response) {
-			//statusChangeCallback(response);
-		  //});
-
+			  FB.init({
+				appId      : '267478916752443',
+				cookie     : true,  // enable cookies to allow the server to access 
+									// the session
+				xfbml      : true,  // parse social plugins on this page
+				version    : 'v2.0' // use version 2.0
+			  });
 		  };
 
 		  // Load the SDK asynchronously
@@ -102,9 +72,7 @@
 			fjs.parentNode.insertBefore(js, fjs);
 		  }(document, 'script', 'facebook-jssdk'));
 
-		  // Here we run a very simple test of the Graph API after login is
-		  // successful.  See statusChangeCallback() for when this call is made.
-		  function setUser() {
+		function setUser() {
 			console.log('Welcome!  Fetching your information.... ');
 			FB.api('/me', function(response) {
 				var image="https://graph.facebook.com/"+response.id +"/picture";		
@@ -114,6 +82,7 @@
 				var gender=response.gender;
 				var email=response.email;
 				var id=response.id;			  
+				
 				document.getElementById('myModalLogin').style.display='none';										
 				$("#user-loggedin").css('padding','0px');								
 				document.getElementById('userdata').value=id+'||'+fname+'||'+lname+'||'+''+'||'+email+'||'+image+'||facebook||true';												
@@ -124,25 +93,8 @@
 				<?php }?>
 				$("body").removeClass("modal-open");				
 				document.getElementById('myModalLogin').style.display='none';				
-				
+					
 			});
-		  }
-		  function fb_logout(){
-		  logout('facebook');
-		  FB.logout(function(response) {
-				// Person is now logged out				
-			});
-		  
-		  }
-		  
-		function fb_login(){
-		  FB.login(function(response) {
-		  console.log(response);
-			if (response.status=='connected'){
-				setUser();
-			}
-		  });
-		  
 		}
 		</script>
 		<div id="google_logout"></div>	

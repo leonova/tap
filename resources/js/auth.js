@@ -190,3 +190,82 @@
 		document.getElementById('profile_picture').value=image;
 		
 	}
+	
+	function fbSignUp() {
+			FB.getLoginStatus(function(response) {
+			  statusChangeCallbackSignUp(response);
+			});
+		}
+		  		  
+	function statusChangeCallbackSignUp(response) {			
+		if (response.status === 'connected') {			
+		  //setUser();
+		} else if (response.status === 'not_authorized') {			  
+		  
+		} else {
+			fb_signup();			 
+		}
+	}
+		  
+	function fb_signup(){
+	    FB.login(function(response) {
+			console.log(response);
+			if (response.status=='connected'){
+				setUserFB();
+			}
+		});		  
+	}
+		
+	function setUserFB() {
+		console.log('Welcome!  Fetching your information.... ');
+		FB.api('/me', function(response) {
+			var image="https://graph.facebook.com/"+response.id +"/picture";		
+			var fname=response.first_name;
+			var lname=response.last_name;
+			var name=response.first_name+' '+response.last_name;
+			var gender=response.gender;
+			var email=response.email;
+			var id=response.id;		
+			document.getElementById('fname').value=fname;
+			document.getElementById('lname').value=lname;
+			document.getElementById('gender').value=gender;
+			document.getElementById('eadd').value=email;
+			document.getElementById('origin').value='facebook';
+			document.getElementById('account_id').value=id;
+			document.getElementById('profile_picture').value=image;				
+				
+		});
+	}
+		
+	function statusChangeCallback(response) {		
+		if (response.status === 'connected') {			
+			setUser();
+		} else if (response.status === 'not_authorized') {
+			// The person is logged into Facebook, but not your app.
+		} else {
+			fb_login();			
+			}
+		}
+	
+	function checkLoginState() {
+		FB.getLoginStatus(function(response) {
+		    statusChangeCallback(response);
+		});
+	}
+			
+	function fb_logout(){
+	    logout('facebook');
+		FB.logout(function(response) {
+			// Person is now logged out				
+		});
+	}
+		  
+	function fb_login(){
+	    FB.login(function(response) {
+			console.log(response);
+			if (response.status=='connected'){
+				setUser();
+			}
+	    });
+		  
+	}
