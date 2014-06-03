@@ -20,7 +20,7 @@
 														<button type="submit" name="submit" class="btn btn-default" id="searchsubmit" type="button" value="search"><span class="glyphicon glyphicon-search"></span></button>
 													</span>
 												</div><!-- /input-group -->
-										</form>	
+										</form>	 
 									</div>
 								</div>
 								<div id="category-description-list">

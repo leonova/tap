@@ -20,7 +20,7 @@
 		}else{
 			$logout='logout();';
 		}	
-	}
+	} 
 	
 ?>
 <!DOCTYPE html>
