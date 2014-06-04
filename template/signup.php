@@ -1,11 +1,12 @@
-<div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1"  id="myModalLogin" class="modal fade" ">
+<div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1"  id="myModalLogin" class="modal fade" >
+		  <div style="z-index:-1;width: 100%;height: 100%;position:absolute;left:0px;top:0px;" onclick="logout();" ></div>
 		  <div class="modal-dialog">
-		    <div id="dialog-login" class="modal-content" style="height: 700px;">
+		    <div id="dialog-login" class="modal-content" style="height: 700px;" >
 		      <div id="dialog-header" class="modal-header" style="margin-top: 0px;">		      		      		      
 			  <!-- Sign Up Dialog -->
 			   <div class="modal-header">
-		        <button aria-hidden="true" data-dismiss="modal" class="close" type="button" onclick="signout();">×</button>
-		        <h4 id="myModalLabel" class="modal-title">Sign Up to theAsianparent</h4>
+		        <button aria-hidden="true" data-dismiss="modal" class="close" type="button" onclick="logout();">×</button>
+		        <h4 id="myModalLabel" class="modal-title">Sign Up to theAsianparent</h4>				
 				<p><button id="fb-login" class="btn fb-signin" type="button" onclick='fbSignUp();'>Facebook</button>
 				<span data-cookiepolicy="single_host_origin" data-scope="https://www.googleapis.com/auth/plus.login https://www.googleapis.com/auth/plus.profile.emails.read" data-clientid="986342482176-mmuncr0raoj4b024rtpqheafui548s6l.apps.googleusercontent.com" data-approvalprompt="force" data-callback="signupFinishedCallback" class="g-signin" id="g_signup">
 					<button class="btn g-plus-signin" type="button"> Google+</button>				

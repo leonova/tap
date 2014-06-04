@@ -13,13 +13,7 @@
 		$email=$session_data[4];
 		$image=$session_data[5];
 		$from=$session_data[6];
-		$token=$session_data[7];	
-			
-		if ($from=='facebook'){
-			$logout='fb_logout();';
-		}else{
-			$logout='logout();';
-		}	
+		$token=$session_data[7];						
 	}
 	
 ?>
@@ -436,7 +430,7 @@
 										<li role="presentation" class="divider"></li>
 										<li role="presentation" class="tap-communities"><a role="menuitem" tabindex="-1" href="#">theAsianparent Groups</a></li>
 										<li role="presentation" class="divider"></li>
-										<li role="presentation"><button type="button" class="btn btn-default" onclick='<?php echo $logout;?>';  id="fb-logout">Log Out</button></li>
+										<li role="presentation"><button type="button" class="btn btn-default" onclick='logout();'  id="fb-logout">Log Out</button></li>
 									</ul>
 							<?php }?>
 						</ul>

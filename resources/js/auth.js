@@ -2,9 +2,7 @@
 	var profile, email;
 	
 	function gplus_logout(){
-		document.getElementById("google_logout").innerHTML ='<iframe id="logoutframe" src="https://accounts.google.com/logout" style="display: none"></iframe>';
-		logout('google');
-		
+		document.getElementById("google_logout").innerHTML ='<iframe id="logoutframe" src="https://accounts.google.com/logout" style="display: none"></iframe>';		
 	}
 	
 	function tm_login(){
@@ -74,28 +72,30 @@
 		});
 		 e.preventDefault(); //STOP default action 
 	});
-	
-	function signout(){
-		document.getElementById('myModalLogin').style.display='none';
-		document.getElementById('mainmodal').style.display='none';
-		fb_logout();	
-		window.location = window.location.pathname;
-	}
-	
+		
 	function reload_page(){
 		window.location = window.location.pathname;
 	}
 	
 	function logout(){
+		//fbLoginChecking();		
+		gplus_logout();
+		main_logout();
+		setInterval(function(){reload_page()},1000);
+		//reload_page();
+		//return false;
+	}	
+
+	function main_logout(){
 		$.ajax({
 		url: "logout.php", //call url
 		type: "POST", //POST OR GET
 		cache: true //true or false
 		}).done(function(data) {		
-			window.location = window.location.pathname;
+			//window.location = window.location.pathname;
 			return false;
-		});
-	}			
+		});		
+	}
   
 	function loginFinishedCallback(authResult) {
 		if (authResult) {
@@ -191,8 +191,16 @@
 		
 	}
 	
-	function fbSignUp() {
-			FB.getLoginStatus(function(response) {
+	function fbLoginChecking() {
+			FB.getLoginStatus(function(response) {	
+				if (response.status=="connected"){
+					fb_logout();			  
+				}
+			});
+	}
+		
+	function fbSignUp() {	
+			FB.getLoginStatus(function(response) {			
 			  statusChangeCallbackSignUp(response);
 			});
 		}
@@ -200,11 +208,14 @@
 	function statusChangeCallbackSignUp(response) {			
 		if (response.status === 'connected') {			
 		  //setUser();
+		  fb_signup();
 		} else if (response.status === 'not_authorized') {			  
 		  
 		} else {
 			fb_signup();			 
 		}
+		
+		return response.status;
 	}
 		  
 	function fb_signup(){
@@ -253,8 +264,7 @@
 		});
 	}
 			
-	function fb_logout(){
-	    logout('facebook');
+	function fb_logout(){	    
 		FB.logout(function(response) {
 			// Person is now logged out				
 		});

@@ -56,7 +56,7 @@
 			</footer>
 		</div>
 		<?php 
-		if (empty($_GET)){
+		if (empty($_GET) && empty($_SESSION['userdata'])){
 		?>
 		<!-- Login Dialog -->
 		<div class="modal fade" id="myModalLogin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -102,17 +102,14 @@
 		</div>
 		<?php }?>
 		<?php 
-			if ($_GET['mod']=="signup"){
+			if ($_GET['mod']=="signup" && empty($_SESSION['userdata'])){
 				include('signup.php');
 			}
 			
-			if ($_GET['mod']=="login"){
+			if ($_GET['mod']=="login"  && empty($_SESSION['userdata'])){
 				include('login.php');
 			}
-			
-			if (!empty($_GET)){
-			 //echo '<div id="mainmodal" class="modal-backdrop fade in" onclick="reload_page();"></div>';
-			}
+
 		?>
 		
 		
