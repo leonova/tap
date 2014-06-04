@@ -1,4 +1,4 @@
-	var root = location.protocol + '//' + location.host;
+	var root = 'http://api.theasianparent.com/';
 	var profile, email;
 	
 	function gplus_logout(){
@@ -6,8 +6,20 @@
 	}
 	
 	function tm_login(){
-		$("#ajaxform").submit(); 
-		return false;
+		var msg='';
+		var email_address=document.getElementById('email_add').value;
+		var passwd=document.getElementById('passwd').value;
+		if (!email1(email_address)){
+			msg+='Invalid Email Address \n';
+		}
+		
+		if (msg==""){
+			$("#ajaxform").submit(); 
+			return false;
+		}else{
+			alert(msg);
+		}
+		
 	}
 	
 	$("#ajaxform").submit(function(e)
@@ -24,14 +36,14 @@
 			success:function(data) 
 			{
 				//data: return data from server
-				
+				console.log(data);
 				if (data.validated==true){
 					document.getElementById('userdata').value=data.user_id+'||'+data.fname+'||'+data.lname+'||'+''+'||'+data.email+'||'+data.profile_picture+'||'+data.from+'||'+data.validated;									
 					submitData();
 					$("body").removeClass("modal-open");				
 					document.getElementById('myModalLogin').style.display='none';
 					document.getElementById('mainmodal').style.display='none';
-					reload_page();
+					//reload_page();
 					
 				}else{
 					document.getElementById("userErrorLog").innerHTML = '<strong style="color:red">Invalid Login </strong>';
