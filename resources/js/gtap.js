@@ -95,3 +95,7 @@
 			});
 			 e.preventDefault(); //STOP default action 		
 	});
+
+	function homepage(){	
+		window.location = "/";
+	}
