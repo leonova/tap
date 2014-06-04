@@ -43,7 +43,7 @@
 					$("body").removeClass("modal-open");				
 					document.getElementById('myModalLogin').style.display='none';
 					document.getElementById('mainmodal').style.display='none';
-					//reload_page();
+					reload_page();
 					
 				}else{
 					document.getElementById("userErrorLog").innerHTML = '<strong style="color:red">Invalid Login </strong>';
