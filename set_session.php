@@ -5,6 +5,8 @@ $data = array(
                 );				
 if (!empty($_POST['userdata'])){
 	$_SESSION['userdata']=$_POST['userdata'];
+	$_SESSION['otherdata']=$_POST['otherdata'];
+	$_SESSION['childdata']=$_POST['childdata'];
 }else{
 	session_destroy();
 }

@@ -1,7 +1,6 @@
 <?php 
 	include('config.php');
-	
-	session_start();		
+	include('functions.php');	
 		
 	if (!empty($_SESSION['userdata'])){		
 		$data=$_SESSION['userdata'];

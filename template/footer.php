@@ -91,7 +91,9 @@
 						</div>			
 					</form>
 					<form name="addSession" id="addSession" action="javascript;;" method="post" accept-charset="utf-8" style="display:none;">
-						<input type='text' id='userdata' name='userdata'><br>   
+						<input type='text' id='userdata' name='userdata'><br>
+						<input type='text' id='otherdata' name='otherdata'><br>		
+						<input type='text' id='childdata' name='childdata'><br>								
 						<input type="submit">
 					</form>
 				  
@@ -102,6 +104,8 @@
 		</div>
 		<?php }?>
 		<?php 
+		
+		if (!empty($_GET)){
 			if ($_GET['mod']=="signup" && empty($_SESSION['userdata'])){
 				include('signup.php');
 			}
@@ -109,7 +113,7 @@
 			if ($_GET['mod']=="login"  && empty($_SESSION['userdata'])){
 				include('login.php');
 			}
-
+		}
 		?>
 		
 		
