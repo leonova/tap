@@ -423,7 +423,7 @@
 											<div class="media-body">
 												<h4 class="media-heading">Hello, <a href="#"><?php echo $fname.' '.$lname; ?></a></h4>
 												<small><?php echo $email; ?></small>
-												<p><a href="#">Account Settings</a></p>
+												<p><a href="<?php echo BASE_URL; ?>user-profile-settings.php">Account Settings</a></p>
 											</div>
 										</li>
 										<li role="presentation" class="divider"></li>
