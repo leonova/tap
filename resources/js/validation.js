@@ -69,3 +69,15 @@ function password(input){
 function noScript(input){
 	return !input.match(/[<>]+/);
 }
+
+//remove spaces
+ function removespace(data){
+	var str=data.replace(/\s+/g,"");
+	var filtered_data=lowercase(str);
+	return filtered_data;
+ }
+ 
+ function lowercase(data){
+	 var str=data.toLowerCase(); 
+	 return str;
+ }

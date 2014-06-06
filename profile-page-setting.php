@@ -18,8 +18,8 @@
 									</figure>
 									<div class="col-xs-10">
 										<ul>
-											<li><input type="checkbox" name="vehicle" value="Bike"> Keep my information private ( only your name and picuture will be shown ) </li>
-											<li><input type="checkbox" name="vehicle" value="Bike"> Keep my children’s information private</li>
+											<li><input type="checkbox" name="keep_myinfo_private" id="keep_myinfo_private" value="1"> Keep my information private ( only your name and picuture will be shown ) </li>
+											<li><input type="checkbox" name="keep_childreninfo_private" id="keep_childreninfo_private" value="1"> Keep my children’s information private</li>
 										</ul>
 									</div>
 								</div>
@@ -113,26 +113,27 @@
 									  		</ul>
 									  		<h3>Your interests: (min. 3 interests)<span>*</span></h3>
 									  		<ul class="your-interest-list">
-									  			<li><input type="checkbox" name="your-interest[]" value="Pregnancy"> Pregnancy</li>
-									  			<li><input type="checkbox" name="your-interest[]" value="Infancy"> Infancy</li>
-									  			<li><input type="checkbox" name="your-interest[]" value="Toddlerhood"> Toddlerhood</li>
-									  			<li><input type="checkbox" name="your-interest[]" value="Childhood"> Childhood</li>
-									  			<li><input type="checkbox" name="your-interest[]" value="Food and recipes"> Food and recipes</li>
-									  			<li><input type="checkbox" name="your-interest[]" value="Health"> Health</li>
-									  			<li><input type="checkbox" name="your-interest[]" value="Education"> Education</li>
-									  			<li><input type="checkbox" name="your-interest[]" value="Parenting"> Parenting</li>
-									  			<li><input type="checkbox" name="your-interest[]" value="Family finance"> Family finance</li>
-									  			<li><input type="checkbox" name="your-interest[]" value="Activities for family"> Activities for family</li>
-									  			<li><input type="checkbox" name="your-interest[]" value="Vacation"> Vacation</li>
-									  			<li><input type="checkbox" name="your-interest[]" value="Picky eating"> Picky eating</li>
-									  			<li><input type="checkbox" name="your-interest[]" value="Discpline"> Discpline</li>
-									  			<li><input type="checkbox" name="your-interest[]" value="In-laws"> In-laws</li>
-									  			<li><input type="checkbox" name="your-interest[]" value="Beauty"> Beauty</li>
-									  			<li><input type="checkbox" name="your-interest[]" value="Marriage"> Marriage</li>
+									  			<li><input type="checkbox" id='pregnancy' name="your-interest[]" value="Pregnancy"> Pregnancy</li>
+									  			<li><input type="checkbox" id='infancy' name="your-interest[]" value="Infancy"> Infancy</li>
+									  			<li><input type="checkbox" id='toddlerhood' name="your-interest[]" value="Toddlerhood"> Toddlerhood</li>
+									  			<li><input type="checkbox" id='childhood' name="your-interest[]" value="Childhood"> Childhood</li>
+									  			<li><input type="checkbox" id='foodandrecipes' name="your-interest[]" value="Food and recipes"> Food and recipes</li>
+									  			<li><input type="checkbox" id='health' name="your-interest[]" value="Health"> Health</li>
+									  			<li><input type="checkbox" id='education' name="your-interest[]" value="Education"> Education</li>
+									  			<li><input type="checkbox" id='parenting' name="your-interest[]" value="Parenting"> Parenting</li>
+									  			<li><input type="checkbox" id='familyfinance' name="your-interest[]" value="Family finance"> Family finance</li>
+									  			<li><input type="checkbox" id='activitiesforfamily' name="your-interest[]" value="Activities for family"> Activities for family</li>
+									  			<li><input type="checkbox" id='vacation' name="your-interest[]" value="Vacation"> Vacation</li>
+									  			<li><input type="checkbox" id='pickyeating' name="your-interest[]" value="Picky eating"> Picky eating</li>
+									  			<li><input type="checkbox" id='discipline' name="your-interest[]" value="Discpline"> Discpline</li>
+									  			<li><input type="checkbox" id='in-laws' name="your-interest[]" value="In-laws"> In-laws</li>
+									  			<li><input type="checkbox" id='beauty' name="your-interest[]" value="Beauty"> Beauty</li>
+									  			<li><input type="checkbox" id='marriage' name="your-interest[]" value="Marriage"> Marriage</li>
 									  		</ul>
 									  		<p><button type="button" class="btn btn-default">Save</button></p>
 									  	</form>
 									  </div>
+									  <div id="child"></div>
 									  <div class="tab-pane" id="children-tab">
 									  	<form>
 										  	<h2>Child 1:</h2>
@@ -147,12 +148,12 @@
 										  		</span>
 										  	</p>
 										  	<p class="row">
-										  		<span class="col-xs-6"><label for="child-first-name">First Name:</label><input type="text" name="child-first-name" class="form-control"></span>
-										  		<span class="col-xs-6"><label for="child-last-name">Last Name:</label><input type="text" name="child-last-name" class="form-control"></span>
+										  		<span class="col-xs-6"><label for="child-first-name">First Name:</label><input type="text" name="child-first-name" id="child-first-name" class="form-control"></span>
+										  		<span class="col-xs-6"><label for="child-last-name">Last Name:</label><input type="text" name="child-last-name" id="child-last-name" class="form-control"></span>
 										  	</p>
 										  	<p>
 											  			<label>Date of birth:<span>*</span></label>
-									                    <select name="bmon" id="bmon" tabindex="8">
+									                    <select name="child_bmon" id="child_bmon" tabindex="8">
 									                        <option value="">Month</option>
 									                        <option value="1">Jan</option>
 									                        <option value="2">Feb</option>
