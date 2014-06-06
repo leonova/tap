@@ -16,12 +16,6 @@
 											<span>Edit Photo</span>
 										</a>
 									</figure>
-									<div class="col-xs-10">
-										<ul>
-											<li><input type="checkbox" name="vehicle" value="Bike"> Keep my information private ( only your name and picuture will be shown ) </li>
-											<li><input type="checkbox" name="vehicle" value="Bike"> Keep my children’s information private</li>
-										</ul>
-									</div>
 								</div>
 							</div>
 							<div class="article-content">
@@ -29,12 +23,16 @@
 									<ul class="nav nav-tabs">
 									  <li class="active"><a href="#general-profile-tab" class="general-tab" data-toggle="tab">General</a></li>
 									  <li><a href="#children-tab" class="children-tab" data-toggle="tab">Children</a></li>
+									   <li><a href="#acct-tab" class="acct-tab" data-toggle="tab">Account</a></li>
 									</ul>
 									
 									<!-- Tab panes -->
+									<!-- general toggle -->
 									<div class="tab-content">
 									  <div class="tab-pane active" id="general-profile-tab">
 									  	<form action="#">
+										
+											<span class="separator"><h3>Personal</h3></span>
 									  		<p><label for="first-name">First Name:<span>*</span></label><input type="text" name="first-name" class="form-control"></p>
 									  		<p><label for="last-name">Last Name:<span>*</span></label><input type="text" name="last-name" class="form-control"></p>
 									  		<ul class="row gender-info">
@@ -54,37 +52,37 @@
 												</li>
 									  			<li class="col-xs-6">
 										  			<label>Date of birth:<span>*</span></label>
-								                    <select name="bmon" id="bmon" tabindex="8">
-									                        <option value="">Month</option>
-									                        <option value="1">Jan</option>
-									                        <option value="2">Feb</option>
-									                        <option value="3">Mar</option>
-									                        <option value="4">Apr</option>
-									                        <option value="5">May</option>
-									                        <option value="6">Jun</option>
-									                        <option value="7">Jul</option>
-									                        <option value="8">Aug</option>
-									                        <option value="9">Sep</option>
-									                        <option value="10">Oct</option>
-									                        <option value="11">Nov</option>
-									                        <option value="12">Dec</option>
-									                    </select>
-									                    <select class="first" name="bday" id="bday" tabindex="7">
-									                        <option value="">Day</option>									                        
-									                    </select>
-									                    <select name="byear" id="byear" tabindex="9">
-									                        <option value="">Year</option>									                        
-									                    </select>
+								                    <select name="date_of_birth:mon" tabindex="8">
+								                        <option value="">Month</option>
+								                        <option value="1">Jan</option>
+								                        <option value="2">Feb</option>
+								                        <option value="3">Mar</option>
+								                        <option value="4">Apr</option>
+								                        <option value="5">May</option>
+								                        <option value="6">Jun</option>
+								                        <option value="7">Jul</option>
+								                        <option value="8">Aug</option>
+								                        <option value="9">Sep</option>
+								                        <option value="10">Oct</option>
+								                        <option value="11">Nov</option>
+								                        <option value="12">Dec</option>
+								                    </select>
+													 <select class="first" name="bday" tabindex="7" id="bday">
+								                        <option value="">Day</option>
+								                    </select>
+								                    <select name="byear" tabindex="9" id="byear">
+								                        <option value="">Year</option>
+								                    </select>
 												</li>
 									  		</ul>
-									  		<h3>Contact information</h3>
-									  		<p><label for="email">Email Address:<span>*</span></label><input type="text" name="email" class="form-control"></p>
-									  		<p><label for="re-email">Re-enter Email Address:<span>*</span></label><input type="text" name="re-email" disabled="disabled" class="form-control"></p>
-									  		<p><label for="phone-number">Phone number:</label><input type="text" name="phone-number" class="form-control"></p>
+											
+									  		<span class="separator"><h3>Contact</h3></span>
+									  		<p><label for="phone-number">Phone number:</label><input type="number" name="phone-number" class="form-control"></p>
 									  		<p>
 									  			<label for="address">Address:</label>
 									  			<textarea name="address" rows="3" class="form-control"></textarea>
 									  		</p>
+											<span class="separator"><h3>Career</h3></span>
 									  		<ul class="row work-info">
 									  			<li class="col-xs-3">
 										  			<label for="you-are-a">You are a...<span>*</span></label>
@@ -99,19 +97,8 @@
 													</select>
 												</li>
 									  		</ul>
-									  		<ul class="row children-info">
-									  			<li class="col-xs-3">
-										  			<label for="motherhood-status">Motherhood status<span>*</span></label>
-										  			<select name="motherhood-status">
-													  <option value="mother of">mother of</option>
-													</select>
-												</li>
-									  			<li class="col-xs-3">
-										  			<label for="children">Number of Children</label>
-								                    <input type="number" name="num-child" min="0" max="10" />
-								                </li>
-									  		</ul>
-									  		<h3>Your interests: (min. 3 interests)<span>*</span></h3>
+											
+											<span class="separator"><h3>Interests</h3></span>
 									  		<ul class="your-interest-list">
 									  			<li><input type="checkbox" name="your-interest" value="Pregnancy"> Pregnancy</li>
 									  			<li><input type="checkbox" name="your-interest" value="Infancy"> Infancy</li>
@@ -133,51 +120,70 @@
 									  		<p><button type="button" class="btn btn-default">Save</button></p>
 									  	</form>
 									  </div>
+									  <!-- children toggle -->
 									  <div class="tab-pane" id="children-tab">
 									  	<form>
-										  	<h2>Child 1:</h2>
-										  	<p class="row">
-										  		<span class="col-xs-3">
-													<img class="media-object" src="resources/images/squre-thumbnail.jpg" alt="...">
-													Image of your child
-										  		</span>
-										  		<span class="col-xs-9">
-													<input type="file" name="uploaded-images">
-													Image not bigger than 100 by 100 and 2MB in size.
-										  		</span>
-										  	</p>
-										  	<p class="row">
-										  		<span class="col-xs-6"><label for="child-first-name">First Name:</label><input type="text" name="child-first-name" class="form-control"></span>
-										  		<span class="col-xs-6"><label for="child-last-name">Last Name:</label><input type="text" name="child-last-name" class="form-control"></span>
-										  	</p>
-										  	<p>
-											  			<label>Date of birth:<span>*</span></label>
-									                    <select name="bmon" id="bmon" tabindex="8">
-									                        <option value="">Month</option>
-									                        <option value="1">Jan</option>
-									                        <option value="2">Feb</option>
-									                        <option value="3">Mar</option>
-									                        <option value="4">Apr</option>
-									                        <option value="5">May</option>
-									                        <option value="6">Jun</option>
-									                        <option value="7">Jul</option>
-									                        <option value="8">Aug</option>
-									                        <option value="9">Sep</option>
-									                        <option value="10">Oct</option>
-									                        <option value="11">Nov</option>
-									                        <option value="12">Dec</option>
-									                    </select>
-									                    <select class="first" name="bday" id="bday" tabindex="7">
-									                        <option value="">Day</option>									                        
-									                    </select>
-									                    <select name="byear" id="byear" tabindex="9">
-									                        <option value="">Year</option>									                        
-									                    </select>
-										  	</p>
-										  	<p><label for="child-interest">Interests: ( seperate by commas) </label><input type="text" name="child-interest" class="form-control"></p>
+											<ul class="user-children">
+												<li class="row user-child">
+													<div class="col-xs-3">
+														<img class="media-object field-photo" src="resources/images/squre-thumbnail.jpg" alt="...">
+														<span class="field-lbl child-age">Age: 2 y/o</span>
+													</div>
+													<div class="col-xs-9">
+														<p class="field-p"><span class="field-lbl">First Name:</span><input type="text" name="child-fname" class="form-control field-oncol"></p>
+														<p class="field-p"><span class="field-lbl">Last Name:</span><input type="text" name="child-lname" class="form-control field-oncol"></p>
+														<p class="field-p"><span class="field-lbl" style="margin-right:20px;">Date of Birth:</span>
+															<select name="bmon" id="bmon">
+																<option value="">Month</option>
+																<option value="1">Jan</option>
+																<option value="2">Feb</option>
+																<option value="3">Mar</option>
+																<option value="4">Apr</option>
+																<option value="5">May</option>
+																<option value="6">Jun</option>
+																<option value="7">Jul</option>
+																<option value="8">Aug</option>
+																<option value="9">Sep</option>
+																<option value="10">Oct</option>
+																<option value="11">Nov</option>
+																<option value="12">Dec</option>
+															</select>
+															<select name="bday" id="bday" >
+																<option value="">Day</option>
+															</select>
+															<select name="byear" id="byear">
+																<option value="">Year</option>
+															</select>
+														</p>
+														<p class="field-p"><span class="field-lbl" style="margin-right:20px;">Gender:</span>
+															<select name="childgender" id="childgender">
+																<option value="">Male</option>
+																<option value="">Female</option>
+															</select>
+														</p>
+														<h3>Interests</h3>
+														<p class="field-p"><span class="field-lbl">Activities:</span><input type="text" name="child-activities" class="form-control field-oncol" placeholder="(seperate by commas)"></p>
+														<p class="field-p"><span class="field-lbl">Books:</span><input type="text" name="child-books" class="form-control field-oncol" placeholder="(seperate by commas)"></p>
+													</div>
+												</li>
+											</ul>
+							
+										  	<!--<p><label for="child-interest">Interests: ( seperate by commas) </label><input type="text" name="child-interest" class="form-control"></p>
 										  	<p><label for="child-fav-activities">Favourite activities: ( seperate by commas) </label><input type="text" name="child-fav-activities" class="form-control"></p>
-										  	<p><label for="child-fav-books">Favourite books: ( seperate by commas) </label><input type="text" name="child-fav-books" class="form-control"></p>
+										  	<p><label for="child-fav-books">Favourite books: ( seperate by commas) </label><input type="text" name="child-fav-books" class="form-control"></p>-->
 										  	<p><button type="button" class="btn btn-default">Save</button></p>
+									  	</form>
+									  </div>
+									  <!-- account toggle -->
+									  <div class="tab-pane" id="acct-tab">
+									  	<form action="#">
+											<span class="separator"><h3>Security</h3></span>
+									  		<p><label for="first-name">Email Address:<span class="field-txt">myemail@gmail.com</span></label></p>
+									  		<p><button type="button" class="btn btn-default"  id="btn-resetpw-form">Reset Password</button></p>
+											<span class="separator"><h3>Privacy</h3></span>
+											<p style="width:100%;"><input type="checkbox" name="vehicle" value="0" checked> Keep my information private ( only your name and picuture will be shown )</p>
+											<p style="width:100%;"><input type="checkbox" name="vehicle" value="0"> Keep my children’s information private</p>
+									  		<p><button type="button" class="btn btn-default">Add Child</button><button type="button" class="btn btn-default">Save</button></p>
 									  	</form>
 									  </div>
 									</div>
