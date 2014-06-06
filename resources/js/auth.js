@@ -1,4 +1,4 @@
-	var root = 'http://api.theasianparent.com/';
+	var root = 'http://api.theasianparent.com';
 	var profile, email;
 	
 	function gplus_logout(){
@@ -290,4 +290,36 @@
 			}
 	    });
 		  
+	}
+	
+	function get_userdata(id){	
+	var formURL = root + '/user/user_data/'+id;
+		$.ajax({
+			url: formURL, //call url
+			type: "POST", //POST OR GET
+			cache: true //true or false
+			}).done(function(data) {	
+				$.each(data.personal_info, function() {	
+					$('#first-name').val(this.user_fname);
+					$('#last-name').val(this.user_lname);
+					$('#gender').val(this.user_gender);
+					$('#marital-status').val(this.user_mstatus);
+					var bdate=this.user_birthdate;
+					var birthdate = bdate.split("-");
+					$('#bmon').val(birthdate[1]);
+					$('#bday').val(birthdate[2]);
+					$('#byear').val(birthdate[0]);
+					$('#email').val(this.user_email);
+					$('#oldemail').val(this.user_email);
+					$('#phone-number').val(this.user_phone);
+					$('#address').val(this.user_address);
+					$('#you-are-a').val(this.user_occupation);
+					$('#income-range').val(this.user_incomerange);
+					$('#motherhood-status').val(this.user_mhstatus);
+					$('#num-child').val(this.user_mhnum);										
+				});
+				//window.location = window.location.pathname;
+				return false;
+		});	
+	
 	}

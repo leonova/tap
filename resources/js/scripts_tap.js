@@ -257,15 +257,21 @@ $(".signup-form").keyup(function(event){
     }
 });
 
+function get_year(){
+	var currentTime = new Date()
+	var year = currentTime.getFullYear();
+	return year;
+}
+	
 //values appened on Sign Up DOB fields
 
 dob_day=""
 dob_yr=""
-
+var curryear=get_year();
 for (var day_value = 1; day_value <= 31; day_value++) {
 	dob_day += '<option value="' + day_value + '">' + day_value + '</option>'
 }
-for (var yr_value = 1920; yr_value <= 2000; yr_value++) {
+for (var yr_value = 1920; yr_value <= curryear; yr_value++) {
 	dob_yr += '<option value="' + yr_value + '">' + yr_value + '</option>'
 }
 

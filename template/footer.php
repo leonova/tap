@@ -122,7 +122,7 @@
 			 
 	    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 	    
-		<script src="http://groups.theasianparent.com/resources/js/scripts_tap.js"></script>				
+		<script src="resources/js/scripts_tap.js"></script>				
 		<script src="resources/js/gtap.js"></script>
 		<script src="resources/js/auth.js"></script>
 		<script src="resources/js/validation.js"></script>
