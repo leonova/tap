@@ -35,19 +35,19 @@
 									<div class="tab-content">
 									  <div class="tab-pane active" id="general-profile-tab">
 									  	<form action="#">
-									  		<p><label for="first-name">First Name:<span>*</span></label><input type="text" name="first-name" class="form-control"></p>
-									  		<p><label for="last-name">Last Name:<span>*</span></label><input type="text" name="last-name" class="form-control"></p>
+									  		<p><label for="first-name">First Name:<span>*</span></label><input type="text" name="first-name" id="first-name" class="form-control"></p>
+									  		<p><label for="last-name">Last Name:<span>*</span></label><input type="text" name="last-name" id="last-name" class="form-control"></p>
 									  		<ul class="row gender-info">
 									  			<li class="col-xs-3">
 										  			<label for="gender">Gender:<span>*</span></label>
-										  			<select name="gender">
+										  			<select name="gender" id="gender">
 													  <option value="male">Male</option>
 													  <option value="female">Female</option>
 													</select>
 												</li>
 									  			<li class="col-xs-3">
 										  			<label for="marital-status">Marital Status:<span>*</span></label>
-										  			<select name="marital-status">
+										  			<select name="marital-status" id="marital-status">
 													  <option value="single">Single</option>
 													  <option value="married">Married</option>
 													</select>
@@ -56,15 +56,15 @@
 										  			<label>Date of birth:<span>*</span></label>
 								                    <select name="bmon" id="bmon" tabindex="8">
 									                        <option value="">Month</option>
-									                        <option value="1">Jan</option>
-									                        <option value="2">Feb</option>
-									                        <option value="3">Mar</option>
-									                        <option value="4">Apr</option>
-									                        <option value="5">May</option>
-									                        <option value="6">Jun</option>
-									                        <option value="7">Jul</option>
-									                        <option value="8">Aug</option>
-									                        <option value="9">Sep</option>
+									                        <option value="01">Jan</option>
+									                        <option value="02">Feb</option>
+									                        <option value="03">Mar</option>
+									                        <option value="04">Apr</option>
+									                        <option value="05">May</option>
+									                        <option value="06">Jun</option>
+									                        <option value="07">Jul</option>
+									                        <option value="08">Aug</option>
+									                        <option value="09">Sep</option>
 									                        <option value="10">Oct</option>
 									                        <option value="11">Nov</option>
 									                        <option value="12">Dec</option>
@@ -78,23 +78,23 @@
 												</li>
 									  		</ul>
 									  		<h3>Contact information</h3>
-									  		<p><label for="email">Email Address:<span>*</span></label><input type="text" name="email" class="form-control"></p>
-									  		<p><label for="re-email">Re-enter Email Address:<span>*</span></label><input type="text" name="re-email" disabled="disabled" class="form-control"></p>
-									  		<p><label for="phone-number">Phone number:</label><input type="text" name="phone-number" class="form-control"></p>
+									  		<p><label for="email">Email Address:<span>*</span></label><input type="hidden" name="oldemail" id="oldemail" class="form-control"> <input type="text" name="email" id="email" class="form-control"></p>
+									  		<p><label for="re-email">Re-enter Email Address:<span>*</span></label><input type="text" name="re-email" id="re-email" disabled="disabled" class="form-control"></p>
+									  		<p><label for="phone-number">Phone number:</label><input type="text" name="phone-number" id="phone-number" class="form-control"></p>
 									  		<p>
 									  			<label for="address">Address:</label>
-									  			<textarea name="address" rows="3" class="form-control"></textarea>
+									  			<textarea name="address" id="address" rows="3" class="form-control"></textarea>
 									  		</p>
 									  		<ul class="row work-info">
 									  			<li class="col-xs-3">
 										  			<label for="you-are-a">You are a...<span>*</span></label>
-										  			<select name="you-are-a">
+										  			<select name="you-are-a" id="you-are-a">
 													  <option value="working">Working</option>
 													</select>
 												</li>
 									  			<li class="col-xs-3">
 										  			<label for="income-range">Income range:<span>*</span></label>
-										  			<select name="income-range">
+										  			<select name="income-range" id="income-range">
 													  <option value="SGD2,000 - SGD2,900">SGD2,000 - SGD2,900</option>
 													</select>
 												</li>
@@ -102,33 +102,33 @@
 									  		<ul class="row children-info">
 									  			<li class="col-xs-3">
 										  			<label for="motherhood-status">Motherhood status<span>*</span></label>
-										  			<select name="motherhood-status">
+										  			<select name="motherhood-status" id="motherhood-status">
 													  <option value="mother of">mother of</option>
 													</select>
 												</li>
 									  			<li class="col-xs-3">
 										  			<label for="children">Number of Children</label>
-								                    <input type="number" name="num-child" min="0" max="10" />
+								                    <input type="number" name="num-child" id="num-child" min="0" max="10" />
 								                </li>
 									  		</ul>
 									  		<h3>Your interests: (min. 3 interests)<span>*</span></h3>
 									  		<ul class="your-interest-list">
-									  			<li><input type="checkbox" name="your-interest" value="Pregnancy"> Pregnancy</li>
-									  			<li><input type="checkbox" name="your-interest" value="Infancy"> Infancy</li>
-									  			<li><input type="checkbox" name="your-interest" value="Toddlerhood"> Toddlerhood</li>
-									  			<li><input type="checkbox" name="your-interest" value="Childhood"> Childhood</li>
-									  			<li><input type="checkbox" name="your-interest" value="Food and recipes"> Food and recipes</li>
-									  			<li><input type="checkbox" name="your-interest" value="Health"> Health</li>
-									  			<li><input type="checkbox" name="your-interest" value="Education"> Education</li>
-									  			<li><input type="checkbox" name="your-interest" value="Parenting"> Parenting</li>
-									  			<li><input type="checkbox" name="your-interest" value="Family finance"> Family finance</li>
-									  			<li><input type="checkbox" name="your-interest" value="Activities for family"> Activities for family</li>
-									  			<li><input type="checkbox" name="your-interest" value="Vacation"> Vacation</li>
-									  			<li><input type="checkbox" name="your-interest" value="Picky eating"> Picky eating</li>
-									  			<li><input type="checkbox" name="your-interest" value="Discpline"> Discpline</li>
-									  			<li><input type="checkbox" name="your-interest" value="In-laws"> In-laws</li>
-									  			<li><input type="checkbox" name="your-interest" value="Beauty"> Beauty</li>
-									  			<li><input type="checkbox" name="your-interest" value="Marriage"> Marriage</li>
+									  			<li><input type="checkbox" name="your-interest[]" value="Pregnancy"> Pregnancy</li>
+									  			<li><input type="checkbox" name="your-interest[]" value="Infancy"> Infancy</li>
+									  			<li><input type="checkbox" name="your-interest[]" value="Toddlerhood"> Toddlerhood</li>
+									  			<li><input type="checkbox" name="your-interest[]" value="Childhood"> Childhood</li>
+									  			<li><input type="checkbox" name="your-interest[]" value="Food and recipes"> Food and recipes</li>
+									  			<li><input type="checkbox" name="your-interest[]" value="Health"> Health</li>
+									  			<li><input type="checkbox" name="your-interest[]" value="Education"> Education</li>
+									  			<li><input type="checkbox" name="your-interest[]" value="Parenting"> Parenting</li>
+									  			<li><input type="checkbox" name="your-interest[]" value="Family finance"> Family finance</li>
+									  			<li><input type="checkbox" name="your-interest[]" value="Activities for family"> Activities for family</li>
+									  			<li><input type="checkbox" name="your-interest[]" value="Vacation"> Vacation</li>
+									  			<li><input type="checkbox" name="your-interest[]" value="Picky eating"> Picky eating</li>
+									  			<li><input type="checkbox" name="your-interest[]" value="Discpline"> Discpline</li>
+									  			<li><input type="checkbox" name="your-interest[]" value="In-laws"> In-laws</li>
+									  			<li><input type="checkbox" name="your-interest[]" value="Beauty"> Beauty</li>
+									  			<li><input type="checkbox" name="your-interest[]" value="Marriage"> Marriage</li>
 									  		</ul>
 									  		<p><button type="button" class="btn btn-default">Save</button></p>
 									  	</form>
@@ -247,6 +247,10 @@
 		$("#btn-resetpw-form").click(function(){
 			$('#DialogResetPw').modal();
 		});	
+
+	    $(document).ready(function(){
+			get_userdata('<?php echo $id; ?>');
+		});
 </script>
 
 <?php include('template/footer.php'); ?>	
