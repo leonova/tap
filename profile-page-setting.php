@@ -12,7 +12,7 @@
 								<div class="user-profile-info row">
 									<figure class="col-xs-2">
 										<a href="#">
-											<img src="resources/images/squre-thumbnail-2.jpg" />
+											<img src="resources/images/squre-thumbnail-2.jpg" id="profile-pic"/>
 											<span>Edit Photo</span>
 										</a>
 									</figure>
@@ -34,7 +34,8 @@
 									<!-- Tab panes -->
 									<div class="tab-content">
 									  <div class="tab-pane active" id="general-profile-tab">
-									  	<form action="#">
+									  	<form action="#" id="profileform" name="profileform">
+										<input type="hidden" name="user-id" id="user-id">
 									  		<p><label for="first-name">First Name:<span>*</span></label><input type="text" name="first-name" id="first-name" class="form-control"></p>
 									  		<p><label for="last-name">Last Name:<span>*</span></label><input type="text" name="last-name" id="last-name" class="form-control"></p>
 									  		<ul class="row gender-info">
@@ -78,7 +79,7 @@
 												</li>
 									  		</ul>
 									  		<h3>Contact information</h3>
-									  		<p><label for="email">Email Address:<span>*</span></label><input type="hidden" name="oldemail" id="oldemail" class="form-control"> <input type="text" name="email" id="email" class="form-control"></p>
+									  		<p><label for="email">Email Address:<span>*</span></label><input type="hidden" name="oldemail" id="oldemail" class="form-control"> <input type="text" name="email"  onblur="checkEmail();" id="email" class="form-control"></p>
 									  		<p><label for="re-email">Re-enter Email Address:<span>*</span></label><input type="text" name="re-email" id="re-email" disabled="disabled" class="form-control"></p>
 									  		<p><label for="phone-number">Phone number:</label><input type="text" name="phone-number" id="phone-number" class="form-control"></p>
 									  		<p>
@@ -130,9 +131,10 @@
 									  			<li><input type="checkbox" id='beauty' name="your-interest[]" value="Beauty"> Beauty</li>
 									  			<li><input type="checkbox" id='marriage' name="your-interest[]" value="Marriage"> Marriage</li>
 									  		</ul>
-									  		<p><button type="button" class="btn btn-default">Save</button></p>
+									  		<p><button type="button" class="btn btn-default" onclick="submitProfile();">Save</button></p>
 									  	</form>
 									  </div>
+										<div id="output"></div>
 									  <div id="child"></div>
 									  <div class="tab-pane" id="children-tab">
 									  	<form>
@@ -250,8 +252,14 @@
 		});	
 
 	    $(document).ready(function(){
+			
+			<?php if (!empty($_SESSION['thumbimage'])){?>
+			update_userprofile('<?php echo $_SESSION['thumbimage']; ?>','<?php echo $_SESSION['childid']; ?>')
+			<?php }?>
 			get_userdata('<?php echo $id; ?>');
 		});
+		
+		
 </script>
 
 <?php include('template/footer.php'); ?>	
